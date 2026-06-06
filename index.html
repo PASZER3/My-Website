@@ -19,12 +19,12 @@
             color: #333;
         }
 
-        /* Sticky Header Matching Image 1000128758.jpg */
+        /* Sticky Header Layout */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 2rem;
+            padding: 1.5rem 4rem;
             background-color: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             position: sticky;
@@ -40,13 +40,26 @@
             line-height: 1.2;
         }
 
-        /* Navigation Buttons */
+        /* Navigation Links Layout matching Desktop View */
         .nav-menu {
             display: flex;
-            gap: 12px;
+            align-items: center;
+            gap: 25px;
         }
 
-        .nav-button {
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-btn-highlight {
             background-color: rgba(255, 255, 255, 0.2);
             color: white;
             text-decoration: none;
@@ -57,17 +70,16 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .nav-button:hover {
+        .nav-btn-highlight:hover {
             background-color: white;
             color: #764ba2;
-            transform: translateY(-2px);
         }
 
         /* Main Enterprise Container */
         .container {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 3rem 2.5rem;
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 4rem 3.5rem;
             background: white;
             border-radius: 24px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
@@ -76,12 +88,12 @@
         /* Main Headline Block */
         .hero-block {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
 
         h1 {
             color: #2c1654;
-            font-size: 2.6rem;
+            font-size: 3rem;
             margin: 0 0 1rem 0;
             font-weight: 800;
             letter-spacing: -0.5px;
@@ -89,20 +101,21 @@
 
         .subtitle {
             color: #55688a;
-            font-size: 1.2rem;
-            max-width: 650px;
+            font-size: 1.25rem;
+            max-width: 720px;
             margin: 0 auto 2.5rem auto;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Interactive Consult/Ask Bar */
+        /* Project Consult Bar */
         .search-box-container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             background: #f8fafc;
             padding: 1.5rem;
             border-radius: 16px;
             border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
         
         .search-box-container p {
@@ -115,7 +128,7 @@
 
         .search-box {
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .search-box input {
@@ -150,68 +163,77 @@
 
         /* Sections Layout */
         section {
-            margin-top: 4.5rem;
-            padding-top: 2.5rem;
+            margin-top: 5rem;
+            padding-top: 3rem;
             border-top: 1px solid #e2e8f0;
             scroll-margin-top: 100px;
         }
 
         h2 {
             color: #2c1654;
-            font-size: 1.9rem;
+            font-size: 2.1rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
         }
 
         .section-tagline {
             color: #64748b;
-            margin: 0 0 2rem 0;
-            font-size: 1rem;
+            margin: 0 0 2.5rem 0;
+            font-size: 1.05rem;
         }
 
-        /* Engineering Service Capabilities Grid */
+        /* Engineering Service Layout Grid matching desktop visual spacing */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        /* Desktop View responsive fix if resolution breaks */
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            header { padding: 1.5rem 2rem; }
+        }
+        @media (max-width: 600px) {
+            .services-grid { grid-template-columns: 1fr; }
         }
 
         .service-card {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 1.5rem;
+            border-radius: 14px;
+            padding: 1.8rem;
             transition: all 0.3s ease;
             border-top: 4px solid #5165dc;
         }
 
         .service-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
             background: white;
         }
 
         .service-card h3 {
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.6rem 0;
             color: #1e1b4b;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
         }
 
         .service-card p {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             color: #475569;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Contact Details Layout */
+        /* Contact Details Layout Block */
         .contact-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
             background: #f1f5f9;
             padding: 2rem;
-            border-radius: 14px;
+            border-radius: 16px;
             margin-top: 1.5rem;
         }
 
@@ -225,21 +247,143 @@
 
         .contact-item p {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #1e1b4b;
+        }
+
+        /* Desktop Footer Panel styling from Image 13281561644219758633.png */
+        footer {
+            background: linear-gradient(135deg, #2c1654 0%, #170d30 100%);
+            color: rgba(255,255,255,0.8);
+            padding: 4rem 4rem 3rem 4rem;
+            margin-top: 6rem;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.4rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 0.95rem;
+            margin: 0 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 3rem auto 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* FLOATING WHATSAPP CHAT MODULE STYLING */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-label {
+            background: white;
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            white-space: nowrap;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .whatsapp-icon-bg {
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* SVG Vector Image for crisp look on high-res displays */
+        .whatsapp-icon-bg svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        /* Hover animations */
+        .whatsapp-widget:hover .whatsapp-icon-bg {
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-widget:hover .whatsapp-label {
+            transform: translateX(-3px);
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Navigation Matching Desktop View Style -->
     <header>
-        <!-- Retained your exact branding layout from 1000128758.jpg -->
         <a href="#" class="logo">Formatice<br>global</a>
         <nav class="nav-menu">
-            <a href="#services" class="nav-button">Services</a>
-            <a href="#about" class="nav-button">About</a>
-            <a href="#contact" class="nav-button">Contact</a>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="https://wa.me/917758008068?text=Hello%20Formatice%20Global,%20I%20would%20like%20to%20discuss%20an%20engineering%20project." target="_blank" class="nav-btn-highlight">Let's Build It</a>
         </nav>
     </header>
 
@@ -250,41 +394,40 @@
             <h1>Engineering Reality</h1>
             <p class="subtitle">
                 Expert solutions in Plastic Injection (IM) & Extrusion Blow Moulding (EBM). 
-                We translate your complex concepts into production-ready industrial assets.
+                We translate your complex concepts into production-ready industrial assets[span_0](start_span)[span_0](end_span).
             </p>
             
             <!-- Technical Project Consultation Field -->
             <div class="search-box-container">
-                <p>Have a complex project or tooling requirement?</p>
-                <!-- Remember to update Formspree endpoint when ready -->
+                <p>Have a complex project or tooling requirement?[span_1](start_span)[span_1](end_span)</p>
                 <form action="YOUR_FORMSPREE_URL_HERE" method="POST" class="search-box">
-                    <input type="text" name="project_query" placeholder="Describe your part or tool requirements..." required>
+                    <input type="text" name="project_query" placeholder="Describe your project requirements..." required>
                     <button type="submit">Submit Request</button>
                 </form>
             </div>
         </div>
 
-        <!-- Integrated Services Infrastructure -->
+        <!-- Integrated 3-Column Services Infrastructure -->
         <section id="services">
             <h2>Tooling Engineering & Design</h2>
-            <p class="section-tagline">Leveraging rigorous industrial methodologies before a single cut of steel is made.</p>
+            <p class="section-tagline">Leveraging rigorous industrial methodologies before a single cut of steel is made[span_2](start_span)[span_2](end_span).</p>
             
             <div class="services-grid">
                 <div class="service-card">
                     <h3>Part Design</h3>
-                    <p>Comprehensive 3D modeling for plastic products, fully optimizing for both cosmetic specifications and functional geometric requirements.</p>
+                    <p>Comprehensive 3D modeling for plastic products, fully optimizing for both cosmetic specifications and functional geometric requirements[span_3](start_span)[span_3](end_span).</p>
                 </div>
                 <div class="service-card">
                     <h3>DFM Analysis</h3>
-                    <p>In-depth Design for Manufacturability evaluation to identify wall thickness variance, draft issues, and ribs to structurally optimize tools and slash costs.</p>
+                    <p>In-depth Design for Manufacturability evaluation to identify wall thickness variance, draft issues, and ribs to structurally optimize tools and slash costs[span_4](start_span)[span_4](end_span).</p>
                 </div>
                 <div class="service-card">
                     <h3>Mouldflow Simulation</h3>
-                    <p>Advanced computational processing to simulate physical material execution—accurately predicting filling behavior, air traps, weld lines, and potential warpage.</p>
+                    <p>Advanced computational processing to simulate physical material execution—accurately predicting filling behavior, air traps, weld lines, and potential warpage[span_5](start_span)[span_5](end_span).</p>
                 </div>
                 <div class="service-card">
                     <h3>Mould Design</h3>
-                    <p>Robust structural and thermal core/cavity architecture engineered for demanding injection molds and high-output Extrusion Blow Moulding (EBM) tooling setups.</p>
+                    <p>Robust structural and thermal core/cavity architecture engineered for demanding injection molds and high-output Extrusion Blow Moulding (EBM) tooling setups[span_6](start_span)[span_6](end_span).</p>
                 </div>
                 <div class="service-card">
                     <h3>2D/3D Electrode Design</h3>
@@ -292,41 +435,86 @@
                 </div>
                 <div class="service-card">
                     <h3>BOM & Documentation</h3>
-                    <p>Rigorous drafting pipelines providing error-free production blueprints alongside detailed structural Bills of Materials for direct toolroom procurement.</p>
+                    <p>Rigorous drafting pipelines providing error-free production blueprints alongside detailed structural Bills of Materials for direct toolroom procurement[span_7](start_span)[span_7](end_span).</p>
                 </div>
             </div>
         </section>
 
-        <!-- Professional Business Context Placement -->
+        <!-- On-Floor Support Information Panel -->
         <section id="about">
             <h2>On-Floor Support & Execution</h2>
-            <p class="section-tagline">Providing end-to-end freelancer agility with Tier-1 engineering capabilities.</p>
-            <p style="line-height: 1.6; color: #475569; font-size: 1rem; margin-bottom: 1.5rem;">
-                We deliver engineering integrity across complete tooling life-cycles—spanning specialized automotive mold variations down to high-volume commercial solutions. Our support goes straight onto the factory floor, assisting with tool setup verification, physical toolroom assembly optimization, raw steel machining troubleshooting, and complete optimization loops during initial trial iterations. 
+            <p class="section-tagline">Providing end-to-end freelancer agility with Tier-1 engineering capabilities[span_8](start_span)[span_8](end_span).</p>
+            <p style="line-height: 1.7; color: #475569; font-size: 1rem; margin: 0;">
+                We deliver engineering integrity across complete tooling life-cycles—spanning specialized automotive mold variations down to high-volume commercial solutions[span_9](start_span)[span_9](end_span). Our support goes straight onto the factory floor, assisting with tool setup verification, physical toolroom assembly optimization, raw steel machining troubleshooting, and complete optimization loops during initial trial iterations[span_10](start_span)[span_10](end_span).
             </p>
         </section>
 
-        <!-- Dynamic Integrated Contact Details -->
+        <!-- Middle Contact Block -->
         <section id="contact">
             <h2>Partner With Us</h2>
-            <p class="section-tagline">Based in Mumbai, supporting high-precision engineering projects globally.</p>
+            <p class="section-tagline">Based in Mumbai, supporting high-precision engineering projects globally[span_11](start_span)[span_11](end_span).</p>
             
             <div class="contact-wrapper">
                 <div class="contact-item">
                     <h4>Direct Engineering Line</h4>
-                    <p>+91 7758008068</p>
+                    <p>+91 7758008068[span_12](start_span)[span_12](end_span)</p>
                 </div>
                 <div class="contact-item">
                     <h4>Operations Support</h4>
-                    <p>+91 9156258591</p>
+                    <p>+91 9156258591[span_13](start_span)[span_13](end_span)</p>
                 </div>
                 <div class="contact-item">
                     <h4>Strategic Hub Location</h4>
-                    <p>Mumbai, MH, India</p>
+                    <p>Mumbai, MH, India[span_14](start_span)[span_14](end_span)</p>
                 </div>
             </div>
         </section>
     </div>
+
+    <!-- Complete Enterprise Footer Section -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Formatice global</h3>
+                <p>Expert solutions in Plastic Injection & Extrusion Blow Moulding production ready industrial assets[span_15](start_span)[span_15](end_span).</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p>📞 +91 7758008068[span_16](start_span)[span_16](end_span)</p>
+                <p>📞 +91 9156258591[span_17](start_span)[span_17](end_span)</p>
+                <p>📍 Mumbai, MH, India[span_18](start_span)[span_18](end_span)</p>
+            </div>
+            <div class="footer-col">
+                <h4>Social Media</h4>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Email Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Sitemap</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Formatice Global. Engineering support pipelines optimized for high volume production lines[span_19](start_span)[span_19](end_span).
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP CHAT MODULE -->
+    <!-- Simply change the '7758008068' value inside the link below if your primary messaging phone changes -->
+    <a href="https://wa.me/917758008068?text=Hello%20Formatice%20Global,%20I%20saw%20your%20website%20and%20have%20an%20engineering%20project%20I%20would%20like%20to%20discuss." target="_blank" class="whatsapp-widget" title="Chat on WhatsApp">
+        <div class="whatsapp-label">Chat with an Engineer</div>
+        <div class="whatsapp-icon-bg">
+            <svg viewBox="0 0 32 32">
+                <path d="M16 2A13 13 0 0 0 4.3 21.3L2 29.5l8.5-2.2A13 13 0 1 0 16 2zm0 24a11 11 0 0 1-5.6-1.5l-.4-.2-5.1 1.3 1.4-4.9-.3-.5A11 11 0 1 1 16 26zm6.2-8.5c-.3-.2-2-1-2.3-1.1s-.5-.2-.7.2-1 1.2-1.2 1.4-.4.2-.8 0a10 10 0 0 1-2.9-1.8 11 11 0 0 1-2-2.5c-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6s.1-.4 0-.6-.7-1.7-1-2.4c-.3-.6-.6-.5-.8-.5h-.7c-.2 0-.6.1-.9.4A2.8 2.8 0 0 0 9 15.1a5.6 5.6 0 0 0 1.2 3 12.7 12.7 0 0 0 4.9 4.3c1.2.5 2 .4 2.8.3a3.5 3.5 0 0 0 2.3-1.6 2.9 2.9 0 0 0 .2-1.6c-.1-.3-.4-.4-.8-.6z"/>
+            </svg>
+        </div>
+    </a>
 
 </body>
 </html>
